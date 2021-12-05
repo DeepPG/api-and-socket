@@ -6,7 +6,7 @@ This is simple project to let me to learn somethings new about api and websocket
 
 ## EndPoints
 
-**GET** `/somome/` => Get all users in the object 
+**GET** `/somome/` => Get all users in the arrays
 
 **GET** `/someone/{name}` => Get user informations
 

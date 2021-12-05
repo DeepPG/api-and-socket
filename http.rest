@@ -1,9 +1,2 @@
-﻿POST  http://localhost:3000/someone
+﻿DELETE http://localhost:3000/someone/an
 content-type: application/json
-
-
-{
-    "_name": "parseInt(1+1)",
-    "surename": "\rdeep",
-    "hisCrash": "hatice"
-}
