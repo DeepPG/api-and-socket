@@ -1,9 +1,0 @@
-﻿POST  http://localhost:3000/someone
-content-type: application/json
-
-
-{
-    "_name": "parseInt(1+1)",
-    "surename": "\rdeep",
-    "hisCrash": "hatice"
-}
