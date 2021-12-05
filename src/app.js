@@ -2,13 +2,11 @@
 const app = express();
 const port = 3000;
 const axios = require('axios').default;
-const server = require('http').createServer(app)
-const EventEmitter = require('events');
 
 
 
 
-// server.js
+// server
  
 const WebSocket = require('ws')
  
@@ -17,20 +15,18 @@ const wss = new WebSocket.Server({ port: 8080 })
 
 
 wss.on('connection', (ws, req) => {
-  ws.on('message', function incoming(message){
-  })
   wss.on('delete', (data) =>{
-    ws.send(data)
+    ws.send(data.username)
   })
   ws.send('test message if user opened the chat')
 })
 
+// connect to the server as user
+
 const wsss = new WebSocket("ws://localhost:8080")
-
-
 wsss.on('open', ws => {
   wsss.on('message', (message) => {
-    console.log(message.toString())
+    console.log(message.toString()) // You need toString function to decode buffer message
   })
 })
 
@@ -42,20 +38,6 @@ wss.on('listening',()=>{
 
 
 
-
-class MyEmitter extends EventEmitter {}
-
-const myEmitter = new MyEmitter();
-let m = 0;
-
-
-myEmitter.on('newUser', (a, b) => {
-  console.log(a, b);
-});
-
-wsss.on('upgrade', (req) => {
-  console.log(req.read())
-})
 
 app.use(express.json())
 
@@ -115,8 +97,12 @@ app.post('/someone', (req, res, next) => {
 })
 
 app.delete('/someone/:name', (req, res) => {
+  let getSomeone = people.find(x => x._name === req.params.name)
+  if(!getSomeone) return res.json({"err": "cannoct find the user 404"})
+    wss.emit('delete', {
+      username : Buffer.from(JSON.stringify(getSomeone))
+    })
   people = people.filter(x => x._name != req.params.name);
-  wss.emit('delete', Buffer.from(JSON.stringify(people[people.findIndex(x => x._name === 'an')])))
 })
 
 app.put('/someone/:name', (req, res) => {
@@ -130,7 +116,7 @@ app.put('/someone/:name', (req, res) => {
 })
 
 
-app.patch('someone/:name', (res, req) => {
+app.patch('/someone/:name', (res, req) => {
 
 
 
@@ -141,7 +127,3 @@ app.patch('someone/:name', (res, req) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-
-
-
-
