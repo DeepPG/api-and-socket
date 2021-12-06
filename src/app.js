@@ -18,6 +18,15 @@ wss.on('connection', (ws, req) => {
   wss.on('delete', (data) =>{
     ws.send(data.username)
   })
+  wss.on('getList', () => {
+    console.log('someone requested all users')
+  })
+  wss.on('getSomeone', (someoneData) => {
+    console.log(someoneData)
+  })
+  wss.on('postSomeone', (postData)=>{
+    console.log(postData)
+  })
   ws.send('test message if user opened the chat')
 })
 
@@ -49,7 +58,7 @@ app.get('/', (req, res, next) => {
 
 var people = [
   {
-    _name: 'ali',
+    _name: 'johny',
     surename: "krisby",
     hisCrash: 'an',
   },
@@ -64,12 +73,13 @@ var people = [
 
 
 app.get('/someone', (req, res) => {
-  console.log(req.query)
+  wss.emit('getList')
   res.json(people)
 })
 
 app.get('/someone/:name', function (req, res) {
   let getSomeone = people.find(x => x._name === req.params.name)
+  wss.emit('getSomeone', getSomeone)
   if(!getSomeone) return res.json({"err": "cannoct find the user 404"})
   res.json(getSomeone)
 })
@@ -93,7 +103,6 @@ app.post('/someone', (req, res, next) => {
   let { hisCrash, _name, surename } = req.body;
   if(people.find(x => x._name === req.body._name)) return res.send({"err": "this name in already exist"})
   people.push({_name: _name, hisCrash: hisCrash, surename: surename})
-  console.log(people)
 })
 
 app.delete('/someone/:name', (req, res) => {

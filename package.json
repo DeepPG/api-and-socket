@@ -4,7 +4,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "nodemon": "^2.0.15",
-    "ws": "^8.2.3"
+    "ws": "^8.3.0"
   },
   "name": "node",
   "version": "1.0.0",
@@ -15,5 +15,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "This is simple project to let me to learn somethings new about api and websocket server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepPG/api-and-socket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DeepPG/api-and-socket/issues"
+  },
+  "homepage": "https://github.com/DeepPG/api-and-socket#readme"
 }
