@@ -35,7 +35,7 @@ const WebSocket = require('ws')
 // connect to the server as user
 const wsss = new WebSocket("ws://localhost:8080")
 wsss.on('open', ws => {
-  wsss.on('message', (message) => {
+  wsss.on('delete', (message) => {
     console.log(message.toString()) // You need toString function to decode buffer message
   })
 })
