@@ -40,3 +40,8 @@ wsss.on('open', ws => {
   })
 })
 ```
+
+
+
+## Donation
+[![Support me](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=K643AVX5KGL3W)
