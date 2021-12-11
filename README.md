@@ -19,7 +19,7 @@ This is simple project to let me to learn somethings new about api and websocket
 
 ## WebSocket Server Events
 
- `delete`
+ `getList`, `getSomeone`, `delete`
 
 
 ## Random Examples
