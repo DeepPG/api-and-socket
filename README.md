@@ -44,4 +44,4 @@ wsss.on('open', ws => {
 
 
 ## Donation
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=K643AVX5KGL3W)
+[![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=K643AVX5KGL3W)
