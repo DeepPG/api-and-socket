@@ -8,6 +8,6 @@ wsss.on('open', ws => {
     console.log(message.toString()) // You need toString function to decode buffer messages
   })
 })
- 
+
  
 module.exports;
