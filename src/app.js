@@ -2,7 +2,7 @@
 const app = express();
 const port = 3000;
 const axios = require('axios').default;
-
+const rout = require('./events/delete')
 
 
 
@@ -31,13 +31,6 @@ wss.on('connection', (ws, req) => {
 })
 
 // connect to the server as user
-
-const wsss = new WebSocket("ws://localhost:8080")
-wsss.on('open', ws => {
-  wsss.on('message', (message) => {
-    console.log(message.toString()) // You need toString function to decode buffer messages
-  })
-})
 
 
 wss.on('listening',()=>{
