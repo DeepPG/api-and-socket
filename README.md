@@ -26,9 +26,6 @@ This is simple project to let me to learn somethings new about api and websocket
 
 **Delete user and delete event**
 
-run
-`DELETE http://localhost:3000/someone/an`
-
 ```js
 const WebSocket = require('ws')
 
@@ -40,6 +37,9 @@ wsss.on('open', ws => {
   })
 })
 ```
+
+run
+`DELETE http://localhost:3000/someone/an`
 
 
 

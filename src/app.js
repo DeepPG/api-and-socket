@@ -2,40 +2,8 @@
 const app = express();
 const port = 3000;
 const axios = require('axios').default;
-const rout = require('./events/delete')
-
-
-
-// server
- 
-const WebSocket = require('ws')
- 
-const wss = new WebSocket.Server({ port: 8080 })
- 
-
-
-wss.on('connection', (ws, req) => {
-  wss.on('delete', (data) =>{
-    ws.send(data.username)
-  })
-  wss.on('getList', () => {
-    console.log('someone requested all users')
-  })
-  wss.on('getSomeone', (someoneData) => {
-    console.log(someoneData)
-  })
-  wss.on('postSomeone', (postData)=>{
-    console.log(postData)
-  })
-  ws.send('test message if user opened the chat')
-})
-
-// connect to the server as user
-
-
-wss.on('listening',()=>{
-   console.log('ws://localhost:8080')
-})
+require('./events/delete')
+require('./server')
 
 
 

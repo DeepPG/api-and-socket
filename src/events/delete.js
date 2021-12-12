@@ -1,4 +1,6 @@
-﻿const WebSocket = require('ws')
+﻿// connect to the server as user
+
+const WebSocket = require('ws')
 
 const wsss = new WebSocket("ws://localhost:8080")
 wsss.on('open', ws => {
