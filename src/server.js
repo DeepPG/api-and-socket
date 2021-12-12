@@ -23,7 +23,7 @@ wss.on('connection', (ws, req) => {
   ws.send('test message if user opened the chat')
 })
 
-
+ 
 wss.on('listening',()=>{
    console.log('ws://localhost:8080')
 })

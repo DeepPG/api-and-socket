@@ -38,7 +38,7 @@ wsss.on('open', ws => {
 })
 ```
 
-run
+run 
 `DELETE http://localhost:3000/someone/an`
 
 
