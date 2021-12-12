@@ -19,7 +19,7 @@ This is simple project to let me to learn somethings new about api and websocket
 
 ## WebSocket Server Events
 
- `delete`
+ `getList`, `getSomeone`, `delete`
 
 
 ## Random Examples
@@ -35,8 +35,13 @@ const WebSocket = require('ws')
 // connect to the server as user
 const wsss = new WebSocket("ws://localhost:8080")
 wsss.on('open', ws => {
-  wsss.on('message', (message) => {
+  wsss.on('delete', (message) => {
     console.log(message.toString()) // You need toString function to decode buffer message
   })
 })
 ```
+
+
+
+## Donation
+[![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=K643AVX5KGL3W)
