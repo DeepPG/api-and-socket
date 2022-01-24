@@ -1,7 +1,0 @@
-﻿POST http://localhost:3000/test/someone
-
-{
-    "_name": "ssdd",
-    "hisCrash": "forbidden",
-    "surename": "SSSSS"
-}
