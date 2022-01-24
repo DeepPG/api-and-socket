@@ -20,6 +20,9 @@ wss.on('connection', (ws, req) => {
   wss.on('postSomeone', (postData)=>{
     console.log(postData)
   })
+  wss.on('userRemoved', (deleteData) => {
+    console.log(deleteData)
+  })
   ws.send('test message if user opened the chat')
 })
 
@@ -34,4 +37,4 @@ wss.on('listening',()=>{
 
 
 
-module.exports;
+module.exports = wss;
