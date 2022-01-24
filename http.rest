@@ -1,1 +1,7 @@
-﻿GET https://probot.io/server/793210514171232286/logs
+﻿POST http://localhost:3000/test/someone
+
+{
+    "_name": "ssdd",
+    "hisCrash": "forbidden",
+    "surename": "SSSSS"
+}
